@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<div class="container-fluid">
+	<!-- <link rel="stylesheet" href="{{ asset('build/app.css') }}"> -->
+    <body>
+	    <div class="mycontent">
+    	<table id="myTable" class="table">
+    		<thead>
+    			<tr>
+    			<th></th>	
+	    		<th>Name</th>
+	    		<th>Email</th>
+	    		<th>Gender</th>
+	    		<th>Description</th>
+	    		<th></th>
+	    	</tr>
+    		</thead>
+    		<tbody>  
+    				{% for user in users %}
+    					<tr>
+    					<td>{{ user.id }}</td>
+	        			<td>{{ user.name }}</td>
+	        			<td>{{ user.email }}</td>
+	        			<td>{{ user.gender }}</td>
+	        			<td>{{ user.description }}</td>
+	        			<td><a href='/users/delete/{{ user.id }}'>Delete</a></td>
+	        			</tr> 
+	    			{% endfor %}	
+    					
+    		</tbody>
+    	</table>
+    	</div>
+    </body>
+    <footer>
+       <!--  <script src="{{ asset('build/app.js') }}"></script> -->
+    </footer>
+ </div>
+
+</html>
